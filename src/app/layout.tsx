@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/data/profile";
 import { themeInitScript } from "@/lib/theme-script";
 import { Providers } from "@/components/Providers";
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className="min-h-dvh">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
